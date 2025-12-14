@@ -1,0 +1,51 @@
+@import "tailwindcss";
+@import "@fontsource/outfit/400.css";
+@import "@fontsource/outfit/500.css";
+@import "@fontsource/outfit/600.css";
+@import "@fontsource/outfit/700.css";
+
+@layer base {
+    body {
+        @apply bg-slate-50 text-slate-900 font-sans antialiased;
+        font-family: 'Outfit', sans-serif;
+    }
+}
+
+@layer utilities {
+    .glass {
+        @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-xl;
+    }
+
+    .glass-dark {
+        @apply bg-slate-900/80 backdrop-blur-xl border border-white/10 shadow-xl text-white;
+    }
+
+    .gradient-bg {
+        background: radial-gradient(circle at top left, #ccfbf1 0%, #f1f5f9 40%, #e2e8f0 100%);
+    }
+}
+
+/* Custom Scanning Animation */
+@keyframes scan-line {
+    0% {
+        top: 0%;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+.animate-scan {
+    animation: scan-line 2.5s linear infinite;
+}
